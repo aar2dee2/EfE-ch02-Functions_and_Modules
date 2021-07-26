@@ -16,6 +16,7 @@ defmodule Geom do
   """
   @doc since: "July 25, 2021"
 
+  @spec area({atom(), number(), number()}) :: number()
   def area({shape, a, b}) do
     area(shape, a, b)
   end
