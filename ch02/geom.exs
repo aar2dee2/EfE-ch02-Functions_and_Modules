@@ -9,9 +9,8 @@ defmodule Geom do
   The `Geom.area` function calculates the area of a rectangle given its length and width. It takes 1 as the default argument for each parameter.
 
   ## Examples
-
-    iex> Geom.area(4,3)
-    12
+      iex> Geom.area(4,3)
+      12
 
   """
   @doc since: "July 25, 2021"
