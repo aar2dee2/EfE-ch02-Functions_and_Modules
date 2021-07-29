@@ -25,9 +25,31 @@ defmodule AskArea do
     end
   end
 
-  @spec get_number(String.t()) :: integer()
+  @spec get_number(String.t()) :: number()
   def get_number(prompt) do
-    IO.gets("Enter #{prompt} >") |> String.trim() |> String.to_integer()
+    input = IO.gets("Enter #{prompt} >") |> String.trim()
+    cond do
+      #Regex.match?(~r/[[:alpha:]]/, input) 
+      #Initially used this to weed out input with *any* alphabets, but since exponents need to be supported, this is not a great idea
+      Regex.match?(~r/^[+-]?\d+$/, input) == true ->
+          String.to_integer(input)
+      Regex.match?(~r/^[+-]?\d+\.\d+([eE][+-]?\d+)?$/, input) == true ->
+          String.to_float(input)
+      true ->
+          IO.puts("Input must be a number")
+          get_number(prompt)
+    end
+    #Breakdown of the Regex used above:
+    # For the integer match- 
+    #the caret '^' is to match beginning of line and '$' is to match end of line
+    #the square brackets '[]' are used to specify a group of characters. 
+    #The '?' after the square brackets indicates that the characters preceding it may or may not be present
+    #the 'd' is to indicate the digit class. A backslash '\' is used before the 'd' to indicate that the pattern match should be on the digit class represented by 'd' and not on the character 'd' itself.
+    #For the float match:
+    #The '.' is to match the decimal. A backslash '\' is used before it to indicate it must be matched on the actual dot and not as a special character
+    #the pattern inside round parentheses'([eE][+-]?\d+)' indicates that this may or may not exist.
+    # For the exponential notation:
+    #the '[eE]' in square brackets are to match exponential notation. These are followed by '[+-]' in square brackets. There is question mark '?' after the '[+-]' to indicate that there may be __zero or one__ occurrence of these. Finally, there is the 'd' class preceded by a backslash - so that it is read as the digit class - and succeeded by the '+' to indicate that there may be __one or more__ of these.
   end
 
   @spec get_dimensions(String.t(), String.t()) :: tuple()
