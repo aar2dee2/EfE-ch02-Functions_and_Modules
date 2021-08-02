@@ -2,7 +2,7 @@ defmodule Dijkstra do
   @moduledoc """
   The `Dijkstra` module contains the function to calculate the greatest common divisor of two integers using a method devised by Edsger W. Dijkstra.
   """
-  @doc since: "July 26, 2021"
+  @doc since: "Elixir 1.12.0 (compiled with Erlang/OTP 24)"
 
   @doc """
   The `gcd` function uses a recursive method to find the Greatest Common Divisor of two integers. If:

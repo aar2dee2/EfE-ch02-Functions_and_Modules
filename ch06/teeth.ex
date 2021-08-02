@@ -3,7 +3,7 @@ defmodule Teeth do
   The `Teeth` module 
   """
 
-  @doc since: "July 29, 2021"
+  @doc since: "Elixir 1.12.0 (compiled with Erlang/OTP 24)"
   @doc """
   The `Teeth.alert/1` function  takes a list of 32 lists of six numbers as its input. If a tooth isn’t present, it is represented by the list [0] instead of a list of six numbers. The function produces a list of the tooth numbers that require attention. The numbers must be in ascending order.
   """

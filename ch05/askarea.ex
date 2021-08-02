@@ -3,7 +3,7 @@ defmodule AskArea do
   @moduledoc """
   Contains the `AskArea.area` function that asks the user for input and uses the input to calculate the area of a shape using the `Geom.area` function
   """
-  
+  @doc since: "Elixir 1.12.0 (compiled with Erlang/OTP 24)"
   def area() do
     shape = IO.gets("R)ectangle, T)riangle, or E)llipse: ") |> String.trim() |> String.first() |> char_to_shape()
     {n1, n2} = case shape do

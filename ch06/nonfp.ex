@@ -1,9 +1,12 @@
 defmodule NonFP do
-@moduledoc """
-A module to generate random numbers for use in functions in other modules"""
+  @moduledoc """
+  A module to generate random numbers for use in functions in other modules"""
 
-@doc """The `NonFP.generate_pockets/2` generates a list of numbers for use
-"""
+  @doc """The `NonFP.generate_pockets/2` generates a list of numbers for use
+  """
+
+  @doc since: "Elixir 1.12.0 (compiled with Erlang/OTP 24)"
+
   @spec generate_pockets(list(), number()) :: list(list)
   def generate_pockets(tooth, prob) do
     :rand.seed(:erlang.timestamp())

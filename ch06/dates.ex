@@ -2,7 +2,7 @@ defmodule Dates do
   @moduledoc """
     The `Dates` module contains the `Dates.date_parts/1` and `Dates.julian/1` functions.
   """
-  @doc since: "July 28, 2021"
+  @doc since: "Elixir 1.12.0 (compiled with Erlang/OTP 24)"
 
   @doc """
   The `Dates.date_parts` function divides a date entered in the ISO format 'yyyy-mm-dd' into a list of 3 parts [yyyy, mm, dd]
@@ -16,7 +16,7 @@ defmodule Dates do
     date |> String.split("-", parts: 3) |> Enum.map(&String.to_integer(&1))
   end
 
-  @doc since: "July 29, 2021"
+  @doc since: "Elixir 1.12.0 (compiled with Erlang/OTP 24)"
 
   @doc """
   The `Dates.julian/1` function accepts a string in ISO format ("yyyy-mm-dd") and returns the Julian date: the day of the year.
@@ -39,7 +39,7 @@ defmodule Dates do
     month_total(Enum.fetch!(parts, 1), days_per_month, 0) + Enum.fetch!(parts, 2)
   end
 
-  @doc since: "July 29, 2021"
+  @doc since: "Elixir 1.12.0 (compiled with Erlang/OTP 24)"
   
   
   #The `Dates.is_leap_year/1` function is a helper function for the `Dates.julian/1` function to help determine the number of days in February in the `Dates.julian/1` function.
@@ -53,7 +53,7 @@ defmodule Dates do
   end
 
 
-  @doc since: "July 29, 2021"
+  @doc since: "Elixir 1.12.0 (compiled with Erlang/OTP 24)"
 
   @doc """
   The `Dates.month_total/3` function gives the number of days in the year upto the beginning of a month. It takes 3 arguments - the month number, a list with the number of days in each of the 12 months (in order from January to December) and an accumulator.

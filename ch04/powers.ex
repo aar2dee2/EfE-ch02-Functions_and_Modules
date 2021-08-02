@@ -5,7 +5,7 @@ defmodule Powers do
   The `Powers` module contains the `Powers.raise` and the `Powers.nth_root` functions that calculate values of a number raised to various exponents.
   """
   
-  @doc since: "July 27, 2021"
+  @doc since: "Elixir 1.12.0 (compiled with Erlang/OTP 24)"
 
   @doc """
   The `Powers.raise` function calculates the value of the first argument raised to the power the second argument.

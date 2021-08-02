@@ -4,7 +4,7 @@ defmodule Power do
   The `Power` module contains the `Power.exponent` function that calculates the value of one number raised to the power the other number.
   """
 
-  @doc since: "July 27, 2021"
+  @doc since: "Elixir 1.12.0 (compiled with Erlang/OTP 24)"
 
   @doc """
   The `Power.exponent` function calculates the value of the first argument raised to the power the second argument.

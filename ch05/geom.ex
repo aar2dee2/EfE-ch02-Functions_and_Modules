@@ -14,7 +14,7 @@ defmodule Geom do
     12
 
   """
-  @doc since: "July 25, 2021"
+  @doc since: "Elixir 1.12.0 (compiled with Erlang/OTP 24)"
 
   @spec area({atom(), number(), number()}) :: number()
   def area({shape, a, b}) do
