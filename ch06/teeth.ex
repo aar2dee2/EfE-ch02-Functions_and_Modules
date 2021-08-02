@@ -12,8 +12,11 @@ defmodule Teeth do
   def alert(teeth) do
     Enum.map(teeth, &Enum.max(&1) >= 4)
       |> Enum.with_index(1)
-      |> Enum.filter(&elem(&1,0))
-      |> Enum.map(&elem(&1,1))
+      |> Keyword.get_values(true)
+      #The one above is even better. the list of tuples consists exclusively of two-element tuples so it's a 'Keyword list'. Can, thus, use the 'Keyword' module. 
+      # Keyword.get_values/2 returns a list of all values matching a particular keyword.
+      #|> Enum.filter(&elem(&1,0))
+      #|> Enum.map(&elem(&1,1))
       #Had earlier used the code commented below to get values from the list of tuples that you get after Enum.with_index(1).
       #instead of creating a separate function, 'elem' can be used to get values from a tuple. elem/2 takes the tuple as first argument and index of the element required as second argument.
       #|> Enum.map(&true_false(&1))
