@@ -12,17 +12,21 @@ defmodule Teeth do
   def alert(teeth) do
     Enum.map(teeth, &Enum.max(&1) >= 4)
       |> Enum.with_index(1)
-      |> Enum.map(&true_false(&1))
-      |> Enum.filter(& !is_nil(&1))
+      |> Enum.filter(&elem(&1,0))
+      |> Enum.map(&elem(&1,1))
+      #Had earlier used the code commented below to get values from the list of tuples that you get after Enum.with_index(1).
+      #instead of creating a separate function, 'elem' can be used to get values from a tuple. elem/2 takes the tuple as first argument and index of the element required as second argument.
+      #|> Enum.map(&true_false(&1))
+      #|> Enum.filter(& !is_nil(&1))
   end
 
-  def true_false({true, b}) do
-    b
-  end
+  #def true_false({true, b}) do
+   # b
+  #end
 
-  def true_false({false, _b}) do
-    :nil
-  end
+  #def true_false({false, _b}) do
+   # :nil
+  #end
 
   def pocket_depths do
     [[0], [2,2,1,2,2,1], [3,1,2,3,2,3],
